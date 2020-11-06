@@ -1,0 +1,19 @@
+<script >
+function convert(){
+var str=document.getElementById("inp").value;
+var ind=str.indexOf("url=",1);
+var eid=str.indexOf("hardware_id",ind);
+var url=str.substr(ind+4, eid-ind-5);
+url=url.replaceAll("%2F","/");
+url=url.replaceAll("%3A",":");
+url=url.replaceAll("%20"," ");
+document.getElementById("inp").value="";
+document.getElementById("download").innerHTML="<a href=\""+url+"\">"+url+"</a>";
+}
+
+</script>
+<title>Cong cu chuyen doi url</title>
+<h1>www.driveridentifier.com</h1>
+<textarea style="width:50%; height: 30%" id="inp" ></textarea><br>
+<input style="width:80; height: 80; background-color: #ff00ff" type="button" value="Convert" onclick="convert()" />
+<div id="download"></div>
